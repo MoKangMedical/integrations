@@ -1,12 +1,13 @@
-# MoKangMedical 集成中心
+# Integrations
 
-> 各项目的MCP/工具/数据源集成
+MoKangMedical集成中心 — 外部服务对接
 
-## 📁 集成列表
-- ClinicalTrials.gov — 临床试验数据
-- PubMed — 文献检索
-- ChEMBL — 化合物数据库
-- OpenTargets — 靶点数据
-- 高德/百度地图 — 地理位置服务
+## 核心集成
 
-## 📄 MIT License
+- PubMed API
+- ClinicalTrials.gov
+- ChEMBL
+- OpenFDA
+- MIMO API
+
+MIT License
