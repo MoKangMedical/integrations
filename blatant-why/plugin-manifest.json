@@ -1,0 +1,59 @@
+{
+  "name": "by-agent",
+  "version": "0.1.0",
+  "description": "BY (Blatant-Why) protein design agent — conversational protein and antibody design with custom scoring",
+  "author": "BY",
+  "tools": {
+    "protenix": {
+      "description": "AF3-class structure prediction with Protenix v1",
+      "engine": "Protenix",
+      "env_var": "PROTEUS_FOLD_DIR",
+      "install": "https://github.com/bytedance/Protenix"
+    },
+    "pxdesign": {
+      "description": "De novo protein binder design with PXDesign",
+      "engine": "PXDesign",
+      "env_var": "PROTEUS_PROT_DIR",
+      "install": "https://github.com/bytedance/PXDesign"
+    },
+    "boltzgen": {
+      "description": "Antibody/nanobody design with BoltzGen + Protenix",
+      "engine": "BoltzGen",
+      "env_var": "PROTEUS_AB_DIR",
+      "install": "https://github.com/HannesStark/boltzgen"
+    }
+  },
+  "mcpServers": [
+    "pdb",
+    "uniprot",
+    "sabdab",
+    "by-screening",
+    "tamarind",
+    "adaptyv",
+    "by-campaign",
+    "by-research",
+    "by-local",
+    "by-knowledge"
+  ],
+  "skills": [
+    "by-design-workflow",
+    "by-scoring",
+    "by-epitope-analysis",
+    "by-screening",
+    "by-campaign-manager",
+    "by-database",
+    "protenix",
+    "pxdesign",
+    "boltzgen"
+  ],
+  "scoring": {
+    "ipSAE": {
+      "description": "Open-source TM-align-inspired interface score from PAE matrices (DunbrackLab formula)",
+      "range": [0.0, 1.0],
+      "thresholds": {"poor": 0.2, "good": 0.5, "excellent": 0.8},
+      "reference": "Dunbrack et al., Res ipSAE loquuntur (2025)"
+    }
+  },
+  "modes": ["binder", "antibody", "structure"],
+  "commands": ["/watch", "/status", "/results", "/screen"]
+}

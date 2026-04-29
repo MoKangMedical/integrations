@@ -1,0 +1,32 @@
+[project]
+name = "blatant-why"
+version = "0.1.0"
+description = "BY (Blatant-Why) protein design agent - CLI wrappers, scoring, and screening"
+requires-python = ">=3.11"
+dependencies = [
+    "click>=8.0",
+    "pydantic>=2.0",
+    "rich>=13.0",
+    "pyyaml>=6.0",
+    "numpy>=2.0",
+    "biopython>=1.80",
+    "httpx>=0.27",
+    "mcp>=1.0",
+    "scipy>=1.12",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "pytest-cov", "pytest-asyncio"]
+ml = ["scikit-learn>=1.4"]
+screening = ["fair-esm>=2.0", "ablang2>=0.3"]
+
+[project.scripts]
+# Entry point uses proteus_cli module name (Python package convention, not branding)
+proteus = "proteus_cli.main:cli"
+
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]

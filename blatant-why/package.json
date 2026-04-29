@@ -1,0 +1,52 @@
+{
+  "name": "blatant-why",
+  "version": "0.1.0-beta",
+  "description": "BY (Blatant-Why) protein design agent for Claude Code \u2014 multi-agent antibody & protein binder design with cloud compute and lab integration",
+  "type": "module",
+  "bin": {
+    "by": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.init.json",
+    "dev": "tsx src/init-cli/index.ts",
+    "prepublishOnly": "npm run build",
+    "test": "bash tests/test_init.sh && bash tests/test_config.sh"
+  },
+  "files": [
+    "dist/",
+    "templates/",
+    "README.md",
+    "LICENSE"
+  ],
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.3.0",
+    "@anthropic-ai/claude-agent-sdk": "^0.2.81"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/001TMF/blatant-why.git"
+  },
+  "homepage": "https://github.com/001TMF/blatant-why#readme",
+  "bugs": {
+    "url": "https://github.com/001TMF/blatant-why/issues"
+  },
+  "author": "Lyceum (Phytovenomics)",
+  "license": "MIT",
+  "keywords": [
+    "protein-design",
+    "antibody-design",
+    "nanobody",
+    "claude-code",
+    "mcp",
+    "computational-biology",
+    "drug-discovery",
+    "binder-design",
+    "protenix",
+    "boltzgen"
+  ]
+}
